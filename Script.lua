@@ -11,7 +11,7 @@ frame.BackgroundColor3 = blak
 frame.BorderColor3 = blue
 frame.BorderSizePixel = 3
 frame.Name = "Frame"
-frame.Position = UDim2.new(0.1,3,0.3,0)
+frame.Position = UDim2.new(0,3,0.3,0)
 frame.Size = UDim2.new(0,300,0,400)
 local pges = Instance.new("Frame")
 pges.Parent = frame
@@ -29,7 +29,7 @@ cope.BackgroundColor3 = blak
 cope.BorderColor3 = blue
 cope.BorderSizePixel = 3
 cope.Name = "Close/Open"
-cope.Position = UDim2.new(0.1,3,0.3,380)
+cope.Position = UDim2.new(0,3,0.3,380)
 cope.Selectable = true
 cope.Size = UDim2.new(0,300,0,20)
 cope.ZIndex = 3
@@ -20474,5 +20474,6 @@ page1.addonl.MouseButton1Down:connect(function()CurrentPage=6 FlipPage(-1) end)
 page5.addonr.MouseButton1Down:connect(function()CurrentPage=0 FlipPage(1) end)
 
 -----------------------------------------------------------------------------
+
 
 
