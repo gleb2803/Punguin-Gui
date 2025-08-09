@@ -19001,16 +19001,16 @@ button.Parent = localp
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "Empty"
+button.Name = "Set JumpPower"
 button.Position = UDim2.new(0.5,0,0,99)
 button.Size = UDim2.new(0.5,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "Empty"
+button.Text = "Set JumpPower"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
-
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = frame.Settings.Page2["JumpPower"].Text
 end)
 local button = Instance.new("TextButton")
 button.Parent = localp
@@ -19026,7 +19026,7 @@ button.FontSize = "Size14"
 button.Text = "Empty"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
-
+	
 end)
 local button = Instance.new("TextButton")
 button.Parent = localp
@@ -19827,16 +19827,21 @@ button.Parent = pgi
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "Empty"
+button.Name = "Tp to random player"
 button.Position = UDim2.new(0.5,0,0,33)
 button.Size = UDim2.new(0.5,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "Empty"
+button.Text = "Tp to random player"
 button.TextColor3 = whit
+button.TextWrapped = true
 button.MouseButton1Down:connect(function()
-
+	local a = game.Players:GetChildren()
+	local plrchose = a[1,#a]
+	if plrchose ~= game.Players.LocalPlayer then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = plrchose.Character.HumanoidRootPart.Position
+	end
 end)
 local button = Instance.new("TextButton")
 button.Parent = pgi
@@ -20422,6 +20427,33 @@ textbox.FontSize = "Size24"
 textbox.Text = "50"
 textbox.TextColor3 = whit
 
+local label = Instance.new("TextLabel")
+label.Parent = pge2
+label.BackgroundColor3 = blak
+label.BorderColor3 = blue
+label.BorderSizePixel = 3
+label.Name = "JumpPower label"
+label.Position = UDim2.new(0,0,0,66)
+label.Size = UDim2.new(1,0,0,30)
+label.ZIndex = 1
+label.Font = tef
+label.FontSize = "Size24"
+label.Text = "JumpPower"
+label.TextColor3 = whit
+local textbox = Instance.new("TextBox")
+textbox.Parent = pge2
+textbox.BackgroundColor3 = blak
+textbox.BorderColor3 = blue
+textbox.BorderSizePixel = 3
+textbox.Name = "JumpPower"
+textbox.Position = UDim2.new(0,0,0,99)
+textbox.Size = UDim2.new(1,0,0,30)
+textbox.ZIndex = 1
+textbox.Font = tef
+textbox.FontSize = "Size24"
+textbox.Text = "150"
+textbox.TextColor3 = whit
+
 
 CurrentPage = 1
 
@@ -20440,4 +20472,5 @@ right.MouseButton1Down:connect(function()FlipPage(1) end)
 left.MouseButton1Down:connect(function()FlipPage(-1) end)
 page1.addonl.MouseButton1Down:connect(function()CurrentPage=6 FlipPage(-1) end)
 page5.addonr.MouseButton1Down:connect(function()CurrentPage=0 FlipPage(1) end)
+
 -----------------------------------------------------------------------------
