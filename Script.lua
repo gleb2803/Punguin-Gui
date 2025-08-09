@@ -19848,33 +19848,32 @@ button.Parent = pgi
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "No coldowns togle"
+button.Name = "Empty"
 button.Position = UDim2.new(0,0,0,66)
 button.Size = UDim2.new(0.5,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "No coldowns togle"
+button.Text = "Empty"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
-	local l_workspace_Attribute_0 = workspace:GetAttribute("CooldownsDisabled");
-    workspace:SetAttribute("CooldownsDisabled", not l_workspace_Attribute_0);
+	
 end)
 local button = Instance.new("TextButton")
 button.Parent = pgi
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "Forse Killer"
+button.Name = "Empty"
 button.Position = UDim2.new(0.5,0,0,66)
 button.Size = UDim2.new(0.5,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "Forse Killer"
+button.Text = "Empty"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
-	workspace:SetAttribute("ForcedKiller", game.Players.LocalPlayer);
+	
 end)
 local button = Instance.new("TextButton")
 button.Parent = pgi
@@ -20475,6 +20474,7 @@ page1.addonl.MouseButton1Down:connect(function()CurrentPage=6 FlipPage(-1) end)
 page5.addonr.MouseButton1Down:connect(function()CurrentPage=0 FlipPage(1) end)
 
 -----------------------------------------------------------------------------
+
 
 
 
