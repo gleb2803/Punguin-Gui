@@ -10491,7 +10491,7 @@ button.MouseButton1Down:connect(function()
 				bu.MouseButton1Down:connect(function()
 					local play = game.Players:findFirstChild(bu.Text)
 					if play ~= nil then
-						whoownit.Character.HumanoidRootPart.Position = play.Character.HumanoidRootPart.Position
+						whoownit.Character:MoveTo(play.Character.HumanoidRootPart.Position)
 						bu.Text = "Teleported!"
 						wait(0.5)
 						bu.Text = a[i].Name
@@ -19908,7 +19908,7 @@ button.MouseButton1Down:connect(function()
 	local a = game.Players:GetChildren()
 	local plrchose = a[math.random(1,#a)]
 	if plrchose ~= game.Players.LocalPlayer then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = plrchose.Character.HumanoidRootPart.Position
+		game.Players.LocalPlayer.Character:MoveTo(plrchose.Character.HumanoidRootPart.Position)
 	end
 end)
 local button = Instance.new("TextButton")
@@ -20542,6 +20542,7 @@ page1.addonl.MouseButton1Down:connect(function()CurrentPage=6 FlipPage(-1) end)
 page5.addonr.MouseButton1Down:connect(function()CurrentPage=0 FlipPage(1) end)
 
 -----------------------------------------------------------------------------
+
 
 
 
