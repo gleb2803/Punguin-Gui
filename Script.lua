@@ -10493,7 +10493,7 @@ button.MouseButton1Down:connect(function()
 					if play ~= nil then
 						whoownit.Character.HumanoidRootPart.Position = play.Character.HumanoidRootPart.Position
 						bu.Text = "Teleported!"
-						wait(2)
+						wait(0.5)
 						bu.Text = a[i].Name
 					end
 				end)
@@ -20542,6 +20542,7 @@ page1.addonl.MouseButton1Down:connect(function()CurrentPage=6 FlipPage(-1) end)
 page5.addonr.MouseButton1Down:connect(function()CurrentPage=0 FlipPage(1) end)
 
 -----------------------------------------------------------------------------
+
 
 
 
