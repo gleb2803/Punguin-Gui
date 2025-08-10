@@ -9358,7 +9358,7 @@ button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
 	whoownit = game.Players.LocalPlayer
 	for i,v in pairs(whoownit.PlayerGui:GetChildren()) do
-		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" then
+		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" or v.Name == "Tp" then
 			v:Remove()
 		end
 	end
@@ -9442,7 +9442,7 @@ button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
 	whoownit = game.Players.LocalPlayer
 	for i,v in pairs(whoownit.PlayerGui:GetChildren()) do
-		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" then
+		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" or v.Name == "Tp" then
 			v:Remove()
 		end
 	end
@@ -9534,7 +9534,7 @@ button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
 	whoownit = game.Players.LocalPlayer
 	for i,v in pairs(whoownit.PlayerGui:GetChildren()) do
-		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" then
+		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" or v.Name == "Tp" then
 			v:Remove()
 		end
 	end
@@ -10431,16 +10431,84 @@ button.Parent = acg
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "Empty"
+button.Name = "Tp Gui"
 button.Position = UDim2.new(0.5,0,0,132)
 button.Size = UDim2.new(0.5,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "Empty"
+button.Text = "Tp Gui"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
+	whoownit = game.Players.LocalPlayer
+	for i,v in pairs(whoownit.PlayerGui:GetChildren()) do
+		if v.Name == "Kick" or v.Name == "Kill" or v.Name == "Lag" or v.Name == "Tp" then
+			v:Remove()
+		end
+	end
+	gui = Instance.new("ScreenGui")
+	gui.Parent = whoownit.PlayerGui
+	gui.Name = "Tp"
 
+	pos = 100
+	pos2 = 10
+	pos3 = 0
+
+	enabled = false
+
+	button = Instance.new("TextButton")
+	button.Parent = gui
+	button.Size = UDim2.new(0, 100, 0, 30)
+	button.Position = UDim2.new(0, 8, 0, pos)
+	button.Text = "Tp"
+	button.MouseButton1Click:connect(function()
+		if enabled == false then 
+			enabled = true
+			local a = game.Players:GetChildren()
+			for i=1, #a do
+				wait()
+				pos2 = pos2 + 23
+				if pos2 >= 135 then
+					pos3 = pos3 + 103
+					pos2 = 33
+				end
+
+				local bu = Instance.new("TextButton")
+				bu.Parent = button
+				bu.Size = UDim2.new(0, 100, 0, 20)
+				bu.Position = UDim2.new(0, pos3, 0, pos2)
+				bu.Text = a[i].Name
+				bu.BackgroundTransparency = 1
+				bu.TextTransparency = 1
+				bu.BackgroundColor3 = Color3.new(0,0.5,0)
+				coroutine.resume(coroutine.create(function()
+					for i=1, 3 do
+						wait()
+						bu.BackgroundTransparency = bu.BackgroundTransparency - 0.34
+						bu.TextTransparency = bu.BackgroundTransparency
+					end
+				end))
+				bu.MouseButton1Down:connect(function()
+					local play = game.Players:findFirstChild(bu.Text)
+					if play ~= nil then
+						whoownit.Character.HumanoidRootPart.Position = play.Character.HumanoidRootPart.Position
+						bu.Text = "Teleported!"
+						wait(2)
+						bu.Text = a[i].Name
+					end
+				end)
+			end
+		elseif enabled == true then
+			enabled = false
+			pos2 = 10
+			pos3 = 0
+			local o = button:GetChildren()
+			for i=1, #o do
+				wait()
+				o[i]:remove()
+			end
+		end
+	end)
 end)
 local button = Instance.new("TextButton")
 button.Parent = acg
@@ -20474,6 +20542,7 @@ page1.addonl.MouseButton1Down:connect(function()CurrentPage=6 FlipPage(-1) end)
 page5.addonr.MouseButton1Down:connect(function()CurrentPage=0 FlipPage(1) end)
 
 -----------------------------------------------------------------------------
+
 
 
 
