@@ -1,5 +1,6 @@
 local des = game:GetDescendants()
 local comand = game:HttpGet("https://raw.githubusercontent.com/gleb2803/Punguin-Gui/refs/heads/main/scr/Main.lua")
+comand = command:gsub(".%localplayer%",game.Players.LocalPlayer.Name)
 
 function notify(text)
     game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -50,6 +51,5 @@ function main()
 end
 
 local success = pcall(main)
-
 
 print(success)
