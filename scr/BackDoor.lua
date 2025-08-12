@@ -10,6 +10,11 @@ function notify(text)
 })
 end
 
+function testParent(obj)
+	if obj.Parent.Name == "RobloxReplicatedStorage" then return false end
+	return true
+end
+
 function testRE(re)
     re:FireServer(comand)
     wait(1)
@@ -32,12 +37,12 @@ end
 
 function main()
     for i,v in pairs(des) do
-        if v:IsA("RemoteEvent") then
+        if v:IsA("RemoteEvent") and testParent(v) then
             if testRE(v) then
                 notify("Crack Sucess")
                 break
             end
-        elseif v:IsA("RemoteFunction") then
+        elseif v:IsA("RemoteFunction") and testParent(v) then
             if testRF(v) then
                 notify("Crack Sucess")
                 break
