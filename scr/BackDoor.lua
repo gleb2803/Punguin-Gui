@@ -48,7 +48,7 @@ function main()
         end
     end
 
-    if game.CoreGui:FindFirstChild("PenguinGui") == nil then
+    if game.Players.LocalPlayer.PlayerGui:FindFirstChild("PenguinGui") == nil then
     	notify("BackDoor Not Found")
     end
 end
@@ -57,4 +57,4 @@ notify("Search BackDoor")
 
 local success = pcall(main)
 
-if success then notify("Error") end
+if not success then notify("Error") end
