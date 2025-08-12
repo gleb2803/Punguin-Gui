@@ -55,6 +55,8 @@ function main()
     end
 end
 
+notify("Search BackDoor")
+
 local success = pcall(main)
 
 print(success)
