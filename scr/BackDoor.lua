@@ -12,7 +12,7 @@ end
 
 function testRE(re)
     re:FireServer(comand)
-    wait(3)
+    wait(1)
     if game.CoreGui:FindFirstChild("PenguinGui") then
         return true
     else
@@ -22,7 +22,7 @@ end
 
 function testRF(rf)
     rf:InvokeServer(comand)
-    wait(3)
+    wait(1)
     if game.CoreGui:FindFirstChild("PenguinGui") then
         return true
     else
