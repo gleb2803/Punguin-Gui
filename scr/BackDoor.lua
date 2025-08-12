@@ -37,12 +37,12 @@ function main()
     for i,v in pairs(des) do
         if v:IsA("RemoteEvent") and testParent(v) then
             if testRE(v) then
-                notify("Crack Sucess")
+                notify("BackDoor Found")
                 break
             end
         elseif v:IsA("RemoteFunction") and testParent(v) then
             if testRF(v) then
-                notify("Crack Sucess")
+                notify("BackDoor Found")
                 break
             end
         end
