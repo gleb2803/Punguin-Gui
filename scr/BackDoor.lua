@@ -1,6 +1,6 @@
 local des = game:GetDescendants()
 local comand = game:HttpGet("https://raw.githubusercontent.com/gleb2803/Punguin-Gui/refs/heads/main/scr/Main.lua")
-comand = command:gsub("%localplayer%",game.Players.LocalPlayer.Name)
+comand = string.gsub(comand,"/localplayer/",game.Players.LocalPlayer.Name)
 
 function notify(text)
     game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -46,7 +46,7 @@ function main()
     end
 
     if game.CoreGui:FindFirstChild("PenguinGui") == nil then
-    notify("BackDoor Not Found")
+    	notify("BackDoor Not Found")
     end
 end
 
