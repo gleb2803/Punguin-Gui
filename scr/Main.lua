@@ -2427,6 +2427,45 @@ button.Parent = gt
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
+button.Name = "Tool Stealer"
+button.Position = UDim2.new(0,0,0,66)
+button.Size = UDim2.new(0.5,0,0,30)
+button.ZIndex = 2
+button.Font = tef
+button.FontSize = "Size14"
+button.Text = "Tool Stealer"
+button.TextColor3 = whit
+button.MouseButton1Down:connect(function()
+	local tool = Instance.new("HopperBin",game.Players./localplayer/.Backpack)
+	tool.Name = "Tool Stealer"
+
+	local toolenabled = false
+
+	local mouse = game.Players./localplayer/:GetMouse()
+
+	tool.Deselected:Connect(function() toolenabled = false end)
+	tool.Selected:Connect(function() toolenabled = true end)
+
+	mouse.Button1Down:Connect(function() 
+		if toolenabled then
+			local part = mouse.Target
+			if part ~= nil then
+				if part.Parent:WaitForChild("Humanoid") then
+					for i,v in pairs(part.Parent:GetChildren()) do
+						if v:IsA("Tool") then
+							v.Parent = game.Players./localplayer/.Backpack
+						end
+					end
+				end
+			end
+		end
+	end)
+end)
+local button = Instance.new("TextButton")
+button.Parent = gt
+button.BackgroundColor3 = blak
+button.BorderColor3 = blue
+button.BorderSizePixel = 3
 button.Name = "Gravity Coil"
 button.Position = UDim2.new(0.5,0,0,66)
 button.Size = UDim2.new(0.5,0,0,30)
