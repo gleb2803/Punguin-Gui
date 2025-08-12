@@ -17,8 +17,7 @@ end
 
 function testRE(re)
     re:FireServer(comand)
-    wait(1)
-    if game.CoreGui:FindFirstChild("PenguinGui") then
+    if game.Players.LocalPlayer.PlayerGui:FindFirstChild("PenguinGui") then
         return true
     else
         return false
@@ -27,8 +26,7 @@ end
 
 function testRF(rf)
     rf:InvokeServer(comand)
-    wait(1)
-    if game.CoreGui:FindFirstChild("PenguinGui") then
+    if game.Players.LocalPlayer.PlayerGui:FindFirstChild("PenguinGui") then
         return true
     else
         return false
@@ -59,4 +57,4 @@ notify("Search BackDoor")
 
 local success = pcall(main)
 
-print(success)
+if success then notify("Error") end
