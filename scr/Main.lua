@@ -570,42 +570,36 @@ button.Parent = sd
 button.BackgroundColor3 = blak
 button.BorderColor3 = blue
 button.BorderSizePixel = 3
-button.Name = "Scrimer"
+button.Name = "Particle Spam"
 button.Position = UDim2.new(0.5,3,0,198)
 button.Size = UDim2.new(0.48,0,0,30)
 button.ZIndex = 2
 button.Font = tef
 button.FontSize = "Size14"
-button.Text = "Scrimer"
+button.Text = "Particle Spam"
 button.TextColor3 = whit
 button.TextWrapped = true
 button.MouseButton1Down:connect(function()
 	local ImageId = frame.Settings.Page1["Decal Id"].Text
-	local MusicId = frame.Settings.Page1["Music Id"].Text
-	for _, v in pairs(game.Players:GetChildren()) do
-		if v.Name ~= game.Players./localplayer/.Name then
-			local gui = Instance.new("ScreenGui")
-			gui.Parent = v.PlayerGui
-			gui.Name = "scrimer"
-			local scrimer = Instance.new("ImageLabel")
-			scrimer.Parent = gui
-			scrimer.Image = "rbxassetid://"..ImageId
-			scrimer.ImageColor3 = Color3.new(255, 255, 255)
-			scrimer.Position = UDim2.new(0,0,0,-60)
-			scrimer.Size = UDim2.new(1,0,1,60)
-			local sound = Instance.new("Sound")
-			sound.Parent = gui
-			sound.SoundId = "rbxassetid://"..MusicId
-			sound:Play()
+	function exPro(root)
+		for _, v in pairs(root:GetChildren()) do
+			if v:IsA("ParticleEmitter") and v.Texture ~= "http://www.roblox.com/asset/?id="..ImageId then
+				v.Parent = nil
+			elseif v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+				v.Transparency = 0
+				local pe = Instance.new("ParticleEmitter",v)
+				v.Texture = "http://www.roblox.com/asset/?id="..ImageId
+			end
+			exPro(v)
 		end
 	end
-	wait(3)
-	for _, v in pairs(game.Players:GetChildren()) do
-		if v.Name ~= game.Players./localplayer/.Name then
-			local gui = v.PlayerGui:WaitForChild("scrimer")
-			gui:Destroy()
+	function asdf(root)
+		for _, v in pairs(root:GetChildren()) do
+			asdf(v)
 		end
 	end
+	exPro(game.Workspace)
+	asdf(game.Workspace)
 end)
 
 local label = Instance.new("TextLabel")
