@@ -4522,6 +4522,9 @@ button.MouseButton1Down:connect(function()
 	s.SoundId = "rbxassetid://"..frame.Settings.Page1["Music Id"].Text
 	s.Volume = 1
 	s.Looped = true
+	if frame.Settings.Page1["Music Id"].Text == 72089843969979 then
+		s.PlaybackSpeed = 0.19
+	end
 	s.Pitch = frame.Settings.Page1["Music Pitch"].Text
 	s:Play()
 	wait(.1)
@@ -4723,7 +4726,7 @@ button.FontSize = "Size14"
 button.Text = "Electro Sp00k"
 button.TextColor3 = whit
 button.MouseButton1Down:connect(function()
-	frame.Settings.Page1["Music Id"].Text = 7772283448
+	frame.Settings.Page1["Music Id"].Text = 72089843969979
 end)
 local button = Instance.new("TextButton")
 button.Parent = pmi
