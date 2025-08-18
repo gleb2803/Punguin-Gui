@@ -57,4 +57,4 @@ notify("Search BackDoor")
 
 local success = pcall(main)
 
-if not success then notify("Error") end
+if not success then notify("Error") end -- Coded by glebmalish_2000 --
